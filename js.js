@@ -123,3 +123,5 @@ function descendingOrder(n) {
 }
 
 // console.log(descendingOrder(1234));
+
+// 12
