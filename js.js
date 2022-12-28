@@ -124,4 +124,55 @@ function descendingOrder(n) {
 
 // console.log(descendingOrder(1234));
 
-// 12
+// 12 Create repetitions of the function
+
+function accum(s) {
+  let numberOfRepetitions = "";
+  for (let i = 0; i < s.length; i++) {
+    numberOfRepetitions += s[i].toUpperCase();
+    for (let j = 0; j < i; j++) {
+      numberOfRepetitions += s[i].toLowerCase();
+    }
+    if (i < s.length - 1) {
+      numberOfRepetitions += "-";
+    }
+  }
+  return numberOfRepetitions;
+}
+
+// console.log(accum("abcd"));
+
+//13 Given an integral number, determine if it's a square number
+
+var isSquare = function (n) {
+  const a = Math.sqrt(n, 2);
+  return Number.isInteger(a);
+};
+// console.log(isSquare(25))
+// console.log(isSquare(23))
+
+//14 create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+function filter_list(l) {
+  return l.filter((element) => typeof element === "number");
+}
+
+// console.log(filter_list([1,2,'a','b']))
+
+//15 Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+
+function XO(str) {
+  let amountOfX = 0;
+  let amountOfO = 0;
+  str.toLowerCase().split("").forEach((element) => {
+    if (element === "x") {
+      amountOfX += 1;
+    }
+    if (element === "o") {
+      amountOfO += 1;
+    }
+  });
+ return amountOfX === amountOfO ? true : false;
+}
+
+console.log(XO("OoXx"));
+console.log(XO("Xooxx"));
