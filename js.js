@@ -163,16 +163,52 @@ function filter_list(l) {
 function XO(str) {
   let amountOfX = 0;
   let amountOfO = 0;
-  str.toLowerCase().split("").forEach((element) => {
-    if (element === "x") {
-      amountOfX += 1;
-    }
-    if (element === "o") {
-      amountOfO += 1;
-    }
-  });
- return amountOfX === amountOfO ? true : false;
+  str
+    .toLowerCase()
+    .split("")
+    .forEach((element) => {
+      if (element === "x") {
+        amountOfX += 1;
+      }
+      if (element === "o") {
+        amountOfO += 1;
+      }
+    });
+  return amountOfX === amountOfO ? true : false;
 }
 
-console.log(XO("OoXx"));
-console.log(XO("Xooxx"));
+// console.log(XO("OoXx"));
+// console.log(XO("Xooxx"));
+
+//16 given a string of words, return the length of the shortest word(s)
+
+function findShort(s) {
+  const words = s.split(' ');
+  console.log(words)
+  let minLength = Number.MAX_VALUE;
+  for (const word of words) {
+    const wordLength = word.length;
+    if (wordLength < minLength) {
+      minLength = wordLength;
+    }
+  }
+  return minLength;
+  
+}
+
+
+// console.log(findShort("bitcoin take over the world maybe who knows perhaps"));
+// console.log(findShort("a aa aaa"));
+
+// 17 write a function maskify, which changes all but the last four characters into '#'.
+
+function maskify(cc) {
+ return cc.replace(/\w(?![\w]{0,3}$)/g, '#')
+}
+
+// console.log(maskify('4556364607935616'))
+// console.log(maskify('1'))
+// console.log(maskify('11111'))
+
+// 18 
+
