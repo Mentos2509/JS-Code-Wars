@@ -183,8 +183,8 @@ function XO(str) {
 //16 given a string of words, return the length of the shortest word(s)
 
 function findShort(s) {
-  const words = s.split(' ');
-  console.log(words)
+  const words = s.split(" ");
+  console.log(words);
   let minLength = Number.MAX_VALUE;
   for (const word of words) {
     const wordLength = word.length;
@@ -193,9 +193,7 @@ function findShort(s) {
     }
   }
   return minLength;
-  
 }
-
 
 // console.log(findShort("bitcoin take over the world maybe who knows perhaps"));
 // console.log(findShort("a aa aaa"));
@@ -203,12 +201,44 @@ function findShort(s) {
 // 17 write a function maskify, which changes all but the last four characters into '#'.
 
 function maskify(cc) {
- return cc.replace(/\w(?![\w]{0,3}$)/g, '#')
+  return cc.replace(/\w(?![\w]{0,3}$)/g, "#");
 }
 
 // console.log(maskify('4556364607935616'))
 // console.log(maskify('1'))
 // console.log(maskify('11111'))
 
-// 18 
+// 18 Capitalize 1st letter of string
 
+function toJadenCase(string) {
+  let a = string.split(" ");
+  for (let i = 0; i < a.length; i++) {
+    a[i] = a[i].charAt(0).toUpperCase() + a[i].substring(1);
+  }
+  return a.join(" ");
+}
+
+// console.log(toJadenCase("how can mirrors be real if our eyes aren't real"));
+
+// 19 Make a program that filters a list of strings and returns a list with only your friends name in it max 4 characters
+function friend(friends) {
+  return friends.filter((element) => element.length === 4);
+}
+
+// console.log(
+//   friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"])
+// );
+
+// 20 If the function is passed a valid PIN string, return true, else return false 4 or 6 digits
+
+function validatePIN (pin) {
+  if (pin.length === 4 || pin.length === 6){
+    const regex = /\D/;
+    if (!regex.test(pin)){
+      return true;
+    }
+  }
+  return false
+}
+
+// console.log(validatePIN("1232"))
