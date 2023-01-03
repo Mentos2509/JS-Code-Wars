@@ -231,14 +231,117 @@ function friend(friends) {
 
 // 20 If the function is passed a valid PIN string, return true, else return false 4 or 6 digits
 
-function validatePIN (pin) {
-  if (pin.length === 4 || pin.length === 6){
+function validatePIN(pin) {
+  if (pin.length === 4 || pin.length === 6) {
     const regex = /\D/;
-    if (!regex.test(pin)){
+    if (!regex.test(pin)) {
       return true;
     }
   }
-  return false
+  return false;
 }
 
 // console.log(validatePIN("1232"))
+
+// 21 Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+
+function invert(array) {
+  return array.map((element) => element * -1);
+}
+
+// console.log(invert([1,2,3,4,5]))
+
+// 22 Write a function that accepts an integer n and a string s as parameters, and returns a string of s repeated exactly n times.
+
+function repeatStr(n, s) {
+  return s.repeat(n);
+}
+
+// console.log(repeatStr(3, "*"));
+
+// 23 takes a String and returns an Array/list with the length of each word added to each element.
+function addLength(str) {
+  return str.split(" ").map((element) => element + " " + element.length);
+}
+
+// console.log(addLength("apple ban"));
+
+// 24 Create a function called shortcut to remove the lowercase vowels (a, e, i, o, u ) in a given string.
+
+function shortcut(string) {
+  let a = ["a", "e", "i", "o", "u"];
+  return string
+    .split("")
+    .filter((element) => a.indexOf(element) === -1)
+    .join("");
+}
+
+// console.log(shortcut(('how are you today?')));
+
+// 25 Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.
+var summation = function (num) {
+  let counter = 0;
+  for (i = 0; i <= num; i++) {
+    counter += i;
+  }
+  return counter;
+};
+
+// console.log(summation(8));
+
+// 26 Price of hot-dogs
+
+function saleHotdogs(n) {
+  if (n < 5) {
+    return n * 100;
+  } else if (n >= 5 && n < 10) {
+    return n * 95;
+  } else if (n >= 10) {
+    return n * 90;
+  }
+}
+
+// console.log(saleHotdogs(30))
+
+// 27 Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
+function sumTwoSmallestNumbers(numbers) {
+  let sorted = numbers.sort((a, b) => a - b);
+  return sorted[0] + sorted[1];
+}
+
+// console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]));
+
+// 28 odd or even 3 integers
+function oddOrEven(array) {
+  if (array.length === 0){
+    return "even"
+  }
+  let a = array.reduce((accumulator, value) => accumulator + value);
+  if (a % 2 === 0) {
+    return "even";
+  } else {
+    return "odd";
+  }
+}
+
+// console.log(oddOrEven([]));
+// console.log(oddOrEven([1,2,3,3]));
+
+// 29 Write a function that takes an array of strings as an argument and returns a sorted array containing the same strings, ordered from shortest to longest.
+function sortByLength (array) {
+ return array.sort((a,b) => a.length - b.length )
+};
+// console.log(sortByLength(["Beg", "Life", "I", "To"]))
+
+//30 Write a function that takes a single string (word) as argument. The function must return an ordered list containing the indexes of all capital letters in the string.
+var capitals = function (word) {
+ let result = [];
+  word.split('').forEach((element,index) => {
+   if (/[A-Z]/.test(element)) {
+ result.push(index);
+   }
+});
+return result
+};
+
+// console.log(capitals('CodEWaRs'))
