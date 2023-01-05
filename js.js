@@ -313,8 +313,8 @@ function sumTwoSmallestNumbers(numbers) {
 
 // 28 odd or even 3 integers
 function oddOrEven(array) {
-  if (array.length === 0){
-    return "even"
+  if (array.length === 0) {
+    return "even";
   }
   let a = array.reduce((accumulator, value) => accumulator + value);
   if (a % 2 === 0) {
@@ -328,20 +328,116 @@ function oddOrEven(array) {
 // console.log(oddOrEven([1,2,3,3]));
 
 // 29 Write a function that takes an array of strings as an argument and returns a sorted array containing the same strings, ordered from shortest to longest.
-function sortByLength (array) {
- return array.sort((a,b) => a.length - b.length )
-};
+function sortByLength(array) {
+  return array.sort((a, b) => a.length - b.length);
+}
 // console.log(sortByLength(["Beg", "Life", "I", "To"]))
 
-//30 Write a function that takes a single string (word) as argument. The function must return an ordered list containing the indexes of all capital letters in the string.
+// 30 Write a function that takes a single string (word) as argument. The function must return an ordered list containing the indexes of all capital letters in the string.
 var capitals = function (word) {
- let result = [];
-  word.split('').forEach((element,index) => {
-   if (/[A-Z]/.test(element)) {
- result.push(index);
-   }
-});
-return result
+  let result = [];
+  word.split("").forEach((element, index) => {
+    if (/[A-Z]/.test(element)) {
+      result.push(index);
+    }
+  });
+  return result;
 };
 
 // console.log(capitals('CodEWaRs'))
+
+// 31 Sum all the numbers of a given array except the highest and the lowest element ( by value, not by index! ).
+function sumArray(array) {
+  if (array == null || array.length <= 1 || array == undefined) {
+    return 0;
+  } else {
+    return array
+      .sort((a, b) => a - b)
+      .slice(1, array.length - 1)
+      .reduce((accumulator, value) => accumulator + value);
+  }
+}
+
+// console.log(sumArray([-6, -20, -1, -10, -12]));
+// console.log(sumArray([1]))
+
+// 32 Take 2 strings s1 and s2 including only letters from a to z. Return a new sorted string, the longest possible, containing distinct letters - each taken only once - coming from s1 or s2.
+
+function longest(s1, s2) {
+  let b = s1 + s2;
+  b = b
+    .split("")
+    .sort()
+    .filter((element, index, array) => {
+      return array.indexOf(element) === index;
+    })
+    .join("");
+
+  return b;
+}
+
+// 32b
+
+function longest(s1, s2) {
+  const everyLetters = s1.split("").concat(s2.split(""));
+  const array = [];
+  for (const letter of everyLetters) {
+    if (array.indexOf(letter) === -1) {
+      array.push(letter);
+    }
+  }
+  return array.sort().join("");
+}
+
+// console.log(longest("aretheyhere", "yestheyarehere"));
+// console.log(longest("aabbccdd", "aabbccddeehijf"));
+
+// 33 Given an array of integers, remove the smallest value. Do not mutate the original array/list. If there are multiple elements with the same value, remove the one with a lower index. If you get an empty array/list, return an empty array/list. Don't change the order of the elements that are left.
+
+function removeSmallest(numbers) {
+  if (numbers === []) {
+    return numbers;
+  } else {
+    const a = numbers.indexOf(Math.min(...numbers));
+    let b = numbers.slice(0, a);
+    let c = numbers.slice(a + 1, numbers.length);
+    return b.concat(c);
+  }
+}
+
+// 33b
+
+function removeSmallest(numbers) {
+  if (numbers === []) {
+    return numbers;
+  } else {
+    const a = numbers.indexOf(Math.min(...numbers));
+    return numbers.filter((element, index) => (element = index !== a));
+  }
+}
+
+// console.log(removeSmallest([5, 3, 2, 1, 4]));
+
+// 34 Give me the amount of people who are in the bus after last stop.
+
+// function busStop(people){
+//  }
+
+function busStop(people) {
+  for (let i = 1; i < people.length; i++) {
+    people[i][1] = people[i][1] * -1;
+  }
+  return people.flat().reduce((sum, value) => sum + value);
+}
+
+// 34b
+
+function busStop1(people) {
+  return people
+    .map(([a, b]) => [a, b * -1])
+    .flat()
+    .reduce((sum, value) => sum + value);
+}
+
+// console.log(busStop([[15,0],[5,1],[5,1]]))
+// console.log(busStop1([[15,0],[5,1],[5,1]]))
