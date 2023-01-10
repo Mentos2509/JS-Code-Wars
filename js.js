@@ -447,7 +447,7 @@ function sumOfMinimums(arr) {
   const minValues = arr
     .map((subarray) => Math.min(...subarray))
     .reduce((element, value) => element + value);
-    return minValues
+  return minValues;
 }
 
 // console.log(
@@ -456,5 +456,19 @@ function sumOfMinimums(arr) {
 //     [67, 89, 90, 56],
 //     [7, 9, 4, 3],
 //     [9, 8, 6, 7],
+//   ])
+// );
+
+// 36 Given a two-dimensional array of integers, return the flattened version of the array with all the integers in the sorted (ascending) order.
+
+function flattenAndSort(array) {
+  return array.flat().sort((a, b) => a - b);
+}
+
+// console.log(
+//   flattenAndSort([
+//     [3, 2, 1],
+//     [7, 9, 8],
+//     [6, 4, 5],
 //   ])
 // );
