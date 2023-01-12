@@ -472,3 +472,20 @@ function flattenAndSort(array) {
 //     [6, 4, 5],
 //   ])
 // );
+
+// 37 Given an array of numbers, return a new array of length number containing the last even numbers from the original array (in the same order). The original array will be not empty and will contain at least "number" even numbers.
+function evenNumbers(array, number) {
+  const evenNumbers = array.filter((element) => element % 2 === 0);
+  const numbersOfRemovals = evenNumbers.length - number;
+  if (evenNumbers.length <= number){
+    return evenNumbers
+  }
+  else{
+    for (let i = 0; i < numbersOfRemovals; i++) {
+    evenNumbers.shift();
+  }
+  }
+  return evenNumbers
+}
+
+// console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
