@@ -518,8 +518,7 @@ function twoOldestAges(ages) {
 
 // console.log(twoOldestAges([1, 2, 3, 4]));
 
-// 41 
-// You are given an odd-length array of integers, in which all of them are the same, except for one single number. Complete the method which accepts such an array, and returns that single different number.
+// 41 You are given an odd-length array of integers, in which all of them are the same, except for one single number. Complete the method which accepts such an array, and returns that single different number.
 
 function stray(numbers) {
   let result = 0;
@@ -527,6 +526,21 @@ function stray(numbers) {
     result ^= numbers[i];
   }
   return result;
-};
+}
 
 // console.log(stray([1, 1, 2]));
+
+//42 Count the number of divisors of a positive integer n
+
+function getDivisorsCnt(n) {
+  let a = [];
+  for (let i = 1; i <= n; i++) {
+    if (n % i === 0) {
+      a.push(i);
+    }
+  }
+  return a.length;
+}
+
+// console.log(getDivisorsCnt(10));
+
