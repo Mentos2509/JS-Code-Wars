@@ -544,3 +544,11 @@ function getDivisorsCnt(n) {
 
 // console.log(getDivisorsCnt(10));
 
+// 43 Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number.
+
+function createPhoneNumber(numbers) {
+  const a = numbers.toString();
+  return "(" + a[0] + a[2] + a[4] + ")" + " " + a[6] + a[8] + a[10] + '-' + a[12] + a[14] + a[16] + a[18];
+}
+
+// console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
