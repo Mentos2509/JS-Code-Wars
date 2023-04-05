@@ -561,3 +561,12 @@ function solution(str){
 }
 
 // console.log(solution("albert"))
+
+// 45 Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false
+
+function boolToWord(bool){
+ return bool? "Yes" : "No"
+}
+
+console.log(boolToWord(true))
+
