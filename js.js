@@ -611,11 +611,28 @@ function makeNegative(num) {
 
 // 47  Square every digit of a number and concatenate them.
 
-function squareDigits(num){
-   const digits = num.toString().split('')
-   const squareDigits = digits.map(element => Math.pow(element, 2))
-   return parseInt(squareDigits.join(''))
-   
+function squareDigits(num) {
+  const digits = num.toString().split("");
+  const squareDigits = digits.map((element) => Math.pow(element, 2));
+  return parseInt(squareDigits.join(""));
 }
 
-console.log(squareDigits(3212))
+console.log(squareDigits(3212));
+
+// 48 Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+
+function XO(str) {
+  let x = 0;
+  let o = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === "x" || str[i] === "X") {
+      x++;
+    } else if (str[i] === "o" || str[i] === "O") {
+      o++;
+    }
+  }
+
+  return x === o;
+}
+
+console.log(XO("xxOo"));
