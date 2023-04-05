@@ -548,25 +548,55 @@ function getDivisorsCnt(n) {
 
 function createPhoneNumber(numbers) {
   const a = numbers.toString();
-  return "(" + a[0] + a[2] + a[4] + ")" + " " + a[6] + a[8] + a[10] + '-' + a[12] + a[14] + a[16] + a[18];
+  return (
+    "(" +
+    a[0] +
+    a[2] +
+    a[4] +
+    ")" +
+    " " +
+    a[6] +
+    a[8] +
+    a[10] +
+    "-" +
+    a[12] +
+    a[14] +
+    a[16] +
+    a[18]
+  );
 }
 
 // console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
 
-
 // 44 Reverse string
 
-function solution(str){
-  return str.split('').reverse().join('')
+function solution(str) {
+  return str.split("").reverse().join("");
 }
 
 // console.log(solution("albert"))
 
 // 45 Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false
 
-function boolToWord(bool){
- return bool? "Yes" : "No"
+function boolToWord(bool) {
+  return bool ? "Yes" : "No";
 }
 
-console.log(boolToWord(true))
+// console.log(boolToWord(true))
 
+// 46 Open or Senior
+
+function openOrSenior(data) {
+  return data.map((member) =>
+    member[0] >= 55 && member[1] > 7 ? "Senior" : "Open"
+  );
+}
+
+console.log(
+  openOrSenior([
+    [45, 12],
+    [55, 21],
+    [19, -2],
+    [104, 20],
+  ])
+);
