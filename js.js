@@ -607,4 +607,15 @@ function makeNegative(num) {
   return num < 0 ? num : num * -1;
 }
 
-console.log(makeNegative(9));
+// console.log(makeNegative(9));
+
+// 47  Square every digit of a number and concatenate them.
+
+function squareDigits(num){
+   const digits = num.toString().split('')
+   const squareDigits = digits.map(element => Math.pow(element, 2))
+   return parseInt(squareDigits.join(''))
+   
+}
+
+console.log(squareDigits(3212))
