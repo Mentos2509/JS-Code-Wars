@@ -592,11 +592,19 @@ function openOrSenior(data) {
   );
 }
 
-console.log(
-  openOrSenior([
-    [45, 12],
-    [55, 21],
-    [19, -2],
-    [104, 20],
-  ])
-);
+// console.log(
+//   openOrSenior([
+//     [45, 12],
+//     [55, 21],
+//     [19, -2],
+//     [104, 20],
+//   ])
+// );
+
+// 47 Return negative
+
+function makeNegative(num) {
+  return num < 0 ? num : num * -1;
+}
+
+console.log(makeNegative(9));
