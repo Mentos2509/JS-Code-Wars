@@ -617,7 +617,7 @@ function squareDigits(num) {
   return parseInt(squareDigits.join(""));
 }
 
-console.log(squareDigits(3212));
+// console.log(squareDigits(3212));
 
 // 48 Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
 
@@ -635,4 +635,27 @@ function XO(str) {
   return x === o;
 }
 
-console.log(XO("xxOo"));
+// console.log(XO("xxOo"));
+
+// 49 Replace symbols in DNA test
+
+function DNAStrand(dna) {
+  return dna
+    .split("")
+    .map((element) => {
+      if (element === "A") {
+        return "T";
+      } else if (element === "T") {
+        return "A";
+      } else if (element === "C") {
+        return "G";
+      } else if (element === "G") {
+        return "C";
+      }
+    })
+    .join("");
+}
+
+// console.log(DNAStrand("AAAA"));
+
+// 50 
