@@ -684,4 +684,12 @@ function isValidWalk(walk) {
     return false;
   }
 }
-console.log(isValidWalk(["n", "s", "n", "s", "n", "s", "n", "s", "n", "s"]));
+// console.log(isValidWalk(["n", "s", "n", "s", "n", "s", "n", "s", "n", "s"]));
+
+// 51  Implement a difference function, which subtracts one list from another and returns the result.
+
+function arrayDiff(a, b) {
+  return a.filter((element)=> !b.includes(element))
+}
+
+console.log(arrayDiff([1,2], [1]))
