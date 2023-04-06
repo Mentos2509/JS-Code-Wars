@@ -689,7 +689,17 @@ function isValidWalk(walk) {
 // 51  Implement a difference function, which subtracts one list from another and returns the result.
 
 function arrayDiff(a, b) {
-  return a.filter((element)=> !b.includes(element))
+  return a.filter((element) => !b.includes(element));
 }
 
-console.log(arrayDiff([1,2], [1]))
+// console.log(arrayDiff([1,2], [1]))
+
+// 52 There is an array with some numbers. All numbers are equal except for one.
+
+function findUniq(arr) {
+  return arr.find(
+    (element) => arr.indexOf(element) === arr.lastIndexOf(element)
+  );
+}
+
+// console.log(findUniq([1, 0, 0]));
