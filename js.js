@@ -703,3 +703,20 @@ function findUniq(arr) {
 }
 
 // console.log(findUniq([1, 0, 0]));
+
+
+// 53 You will be given an array of numbers. You have to sort the odd numbers in ascending order while leaving the even numbers at their original positions.
+
+function sortArray(array) {
+  const oddNumbers = array.filter((number) => number % 2 !== 0).sort((a, b) => a - b);
+  return array.map((number) => {
+    if (number % 2 !== 0) {
+      return oddNumbers.shift(); 
+    } else {
+      return number; 
+    }
+  });}
+
+// console.log(sortArray([5, 3, 2, 8, 1, 4]))
+
+//54 
