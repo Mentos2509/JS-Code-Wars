@@ -704,19 +704,33 @@ function findUniq(arr) {
 
 // console.log(findUniq([1, 0, 0]));
 
-
 // 53 You will be given an array of numbers. You have to sort the odd numbers in ascending order while leaving the even numbers at their original positions.
 
 function sortArray(array) {
-  const oddNumbers = array.filter((number) => number % 2 !== 0).sort((a, b) => a - b);
+  const oddNumbers = array
+    .filter((number) => number % 2 !== 0)
+    .sort((a, b) => a - b);
   return array.map((number) => {
     if (number % 2 !== 0) {
-      return oddNumbers.shift(); 
+      return oddNumbers.shift();
     } else {
-      return number; 
+      return number;
     }
-  });}
+  });
+}
 
 // console.log(sortArray([5, 3, 2, 8, 1, 4]))
 
-//54 
+//54 Complete the function that takes a string as an argument representing the current state of the light and returns a string representing the state the light should change to.
+
+function updateLight(current) {
+  if (current === "green") {
+    return "yellow";
+  } else if (current === "yellow") {
+    return "red";
+  } else {
+    return "green";
+  }
+}
+
+updateLight("green"), "yellow";
