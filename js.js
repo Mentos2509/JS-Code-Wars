@@ -734,3 +734,15 @@ function updateLight(current) {
 }
 
 updateLight("green"), "yellow";
+
+function domainName(url) {
+// 55 Write a function that when given a URL as a string, parses out just the domain name and returns it as a string
+
+return url.replace(/^(https?:\/\/)?/i, '').replace(/^www\./i, '').split('/')[0].split('.')[0]
+}
+
+// console.log(domainName("http://google.com"));
+// console.log(domainName("http://mama.co.jp"));
+// console.log(domainName("www.xakep.ru"));
+// console.log(domainName("https://youtube.com"));
+// console.log(domainName("http://www.q8bwnvp3w0n0ec6cb4.jp/index.php"))
