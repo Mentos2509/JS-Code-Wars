@@ -737,16 +737,34 @@ function updateLight(current) {
 
 // 55 Write a function that when given a URL as a string, parses out just the domain name and returns it as a string
 function domainName(url) {
-
-return url.replace(/^(https?:\/\/)?/i, '').replace(/^www\./i, '').split('/')[0].split('.')[0]
+  return url
+    .replace(/^(https?:\/\/)?/i, "")
+    .replace(/^www\./i, "")
+    .split("/")[0]
+    .split(".")[0];
 }
 
 // console.log(domainName("http://google.com"));
 
 // 56 Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
 function evenOrOdd(number) {
- return number % 2 === 0? "Even" : "Odd"
+  return number % 2 === 0 ? "Even" : "Odd";
 }
 
 // console.log(evenOrOdd(62));
 
+// 56 Write a function that takes in a string of one or more words, and returns the same string, but with all five or more letter words reversed (Just like the name of this Kata). Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.
+
+function spinWords(string) {
+  return string
+    .split(" ")
+    .map((word) => {
+      if (word.length > 4) {
+        return word.split("").reverse().join("");
+      }
+      return word;
+    })
+    .join(" ");
+}
+
+console.log(spinWords("Hey fellow warriors"));
