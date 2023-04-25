@@ -802,7 +802,29 @@ function positiveSum(arr) {
 // 59 We need a function that can transform a number (integer) into a string.
 
 function numberToString(num) {
- return num.toString()
+  return num.toString();
 }
 
-console.log(numberToString(67))
+// console.log(numberToString(67))
+
+// 60 Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
+
+function uniqueInOrder(iterable) {
+  // if (typeof iterable === "string") {
+  //   return iterable
+  //     .split("")
+  //     .filter((element, index) => element !== iterable[index + 1]);
+  // } else {
+  //   return iterable.filter((element, index) => element !== iterable[index + 1]);
+  // }
+}
+
+function uniqueInOrder(iterable) {
+  // return [...iterable].filter((e, i) => e !== iterable[i + 1]);
+}
+
+// console.log(uniqueInOrder("AAAABBBCCDAaBBB"));
+// console.log(uniqueInOrder([1, 2, 2, 3, 3]));
+
+
+// 61 
