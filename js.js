@@ -827,4 +827,14 @@ function uniqueInOrder(iterable) {
 // console.log(uniqueInOrder([1, 2, 2, 3, 3]));
 
 
-// 61 
+// 61 Write a function that removes the spaces from the string, then return the resultant string.
+
+no_space = (x) => {
+  return x.split('').filter((element) => element !== ' ').join('')
+}
+
+no_space = (x) => {
+    return x.replaceAll(' ', '')
+}
+
+// console.log(no_space('8 j 8   mBliB8g  imjB8B8  jl  B'))
