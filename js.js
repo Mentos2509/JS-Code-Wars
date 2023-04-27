@@ -826,15 +826,32 @@ function uniqueInOrder(iterable) {
 // console.log(uniqueInOrder("AAAABBBCCDAaBBB"));
 // console.log(uniqueInOrder([1, 2, 2, 3, 3]));
 
-
 // 61 Write a function that removes the spaces from the string, then return the resultant string.
 
 no_space = (x) => {
-  return x.split('').filter((element) => element !== ' ').join('')
-}
+  return x
+    .split("")
+    .filter((element) => element !== " ")
+    .join("");
+};
 
 no_space = (x) => {
-    return x.replaceAll(' ', '')
-}
+  return x.replaceAll(" ", "");
+};
 
 // console.log(no_space('8 j 8   mBliB8g  imjB8B8  jl  B'))
+
+// 62 Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
+
+function order(sentence) {
+  let emptyArray = [];
+  for (let i = 1; i < 10; i++) {
+    let c = sentence.split(" ").filter((element) => element.includes(i));
+    emptyArray.push(...c);
+  }
+  return emptyArray.join(' ');
+}
+
+console.log(order("is2 Thi1s T4est 3a"));
+
+// 63 
