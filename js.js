@@ -849,9 +849,31 @@ function order(sentence) {
     let c = sentence.split(" ").filter((element) => element.includes(i));
     emptyArray.push(...c);
   }
-  return emptyArray.join(' ');
+  return emptyArray.join(" ");
 }
 
-console.log(order("is2 Thi1s T4est 3a"));
+// console.log(order("is2 Thi1s T4est 3a"));
 
-// 63 
+// 63 Given two integers a and b, which can be positive or negative, find the sum of all the integers between and including them and return it. If the two numbers are equal return a or b.
+
+function getSum(a, b) {
+  let array = [];
+  if (a === b) {
+    return a;
+  } else if (a < b) {
+    {
+      for (i = a; i <= b; i++) {
+        array.push(i);
+      }
+      return array.reduce((a, b) => a + b, 0);
+    }
+  } else if (a > b) {
+    for (i = b; i <= a; i++) {
+      array.push(i);
+    }
+    return array.reduce((a, b) => a + b, 0);
+  }
+}
+
+// console.log(getSum(2, 2));
+// console.log(getSum(-1, 2));
