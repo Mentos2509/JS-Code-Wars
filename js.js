@@ -877,3 +877,12 @@ function getSum(a, b) {
 
 // console.log(getSum(2, 2));
 // console.log(getSum(-1, 2));
+
+// 64 Given an integer or a floating-point number, find its opposite.
+
+function opposite(number) {
+  return number === 0 ? 0 : number * -1;
+}
+
+// console.log(opposite(1));
+
