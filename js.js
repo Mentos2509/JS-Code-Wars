@@ -892,11 +892,21 @@ function nbYear(p0, percent, aug, p) {
   let population = p0;
   let i = 0;
   while (p > population) {
-    population =
-      Math.floor(population + (population * percent * 0.01) + aug);
+    population = Math.floor(population + population * percent * 0.01 + aug);
     i++;
   }
   return i;
 }
 
-console.log(nbYear(1500000, 0.25, 1000, 2000000));
+// console.log(nbYear(1500000, 0.25, 1000, 2000000));
+
+// 66 Your goal is to create a function that removes the first and last characters of a string
+
+function removeChar(str) {
+  return str
+    .split("")
+    .filter((element,index) => index !== 0 && index !== str.length-1)
+    .join("");
+}
+
+console.log(removeChar("ftb0wnb"));
