@@ -905,8 +905,27 @@ function nbYear(p0, percent, aug, p) {
 function removeChar(str) {
   return str
     .split("")
-    .filter((element,index) => index !== 0 && index !== str.length-1)
+    .filter((element, index) => index !== 0 && index !== str.length - 1)
     .join("");
 }
 
-console.log(removeChar("ftb0wnb"));
+// console.log(removeChar("ftb0wnb"));
+
+// 67 Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
+
+function solution(str) {
+  if (str.length % 2 !== 0) {
+    str += "_";
+  }
+  if (str === undefined){
+    return str
+  }
+  let pairs = [];
+  for (let i = 0; i < str.length; i += 2) {
+    pairs.push(str.slice(i, i + 2));
+  }
+  
+  return pairs;
+}
+
+console.log(solution("abcdef"));
