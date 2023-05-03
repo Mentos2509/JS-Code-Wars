@@ -917,15 +917,31 @@ function solution(str) {
   if (str.length % 2 !== 0) {
     str += "_";
   }
-  if (str === undefined){
-    return str
+  if (str === undefined) {
+    return str;
   }
   let pairs = [];
   for (let i = 0; i < str.length; i += 2) {
     pairs.push(str.slice(i, i + 2));
   }
-  
+
   return pairs;
 }
 
-console.log(solution("abcdef"));
+// console.log(solution("abcdef"));
+
+// 68 Write a function which takes a list of strings and returns each line prepended by the correct number.
+function number(array) {
+  if (array === []) {
+    return [];
+  } else {
+    let result = [];
+    for (i = 1; i <= array.length; i++) {
+      result.push(`${i}: ${array[i - 1]}`);
+    }
+    return result;
+  }
+}
+
+console.log(number(["a", "b", "c", "d"]));
+console.log(number([]));
