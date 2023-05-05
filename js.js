@@ -948,8 +948,19 @@ function number(array) {
 
 // 69 Write a function that returns both the minimum and maximum number of the given list/array.
 
-function minMax(arr){
-  return [Math.min(...arr), Math.max(...arr)]
+function minMax(arr) {
+  return [Math.min(...arr), Math.max(...arr)];
 }
 
-console.log(minMax([1,2,3,4,5]))
+// console.log(minMax([1,2,3,4,5]))
+
+// 70 You will be given a number and you will need to return it as a string in Expanded Form
+
+function expandedForm(num) {
+ let value = num.toString().split('').reverse('').map((element,i)=> element * Math.pow(10,i)).filter(a=> a>0).reverse().join(' + ')
+
+return value
+}
+
+// console.log(expandedForm(54321));
+// console.log(expandedForm(12));
