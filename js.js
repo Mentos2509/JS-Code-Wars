@@ -964,3 +964,13 @@ return value
 
 // console.log(expandedForm(54321));
 // console.log(expandedForm(12));
+
+
+// 71 You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+
+function stray(arr) {
+   let a = arr.filter(element=>  arr.indexOf(element) === arr.lastIndexOf(element))
+   return Number(a)
+}
+
+console.log(stray([2,2,2,2,2,3]))
