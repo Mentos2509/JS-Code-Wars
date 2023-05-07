@@ -957,20 +957,42 @@ function minMax(arr) {
 // 70 You will be given a number and you will need to return it as a string in Expanded Form
 
 function expandedForm(num) {
- let value = num.toString().split('').reverse('').map((element,i)=> element * Math.pow(10,i)).filter(a=> a>0).reverse().join(' + ')
+  let value = num
+    .toString()
+    .split("")
+    .reverse("")
+    .map((element, i) => element * Math.pow(10, i))
+    .filter((a) => a > 0)
+    .reverse()
+    .join(" + ");
 
-return value
+  return value;
 }
 
 // console.log(expandedForm(54321));
 // console.log(expandedForm(12));
 
-
 // 71 You are given an odd-length array of integers, in which all of them are the same, except for one single number.
 
 function stray(arr) {
-   let a = arr.filter(element=>  arr.indexOf(element) === arr.lastIndexOf(element))
-   return Number(a)
+  let a = arr.filter(
+    (element) => arr.indexOf(element) === arr.lastIndexOf(element)
+  );
+  return Number(a);
 }
 
-console.log(stray([2,2,2,2,2,3]))
+// console.log(stray([2,2,2,2,2,3]))
+
+// 72 Finish the solution so that it sorts the passed in array of numbers. If the function passes in an empty array or null/nil value then it should return an empty array.
+
+function solution(num) {
+  if (num == [] || num === null) {
+    return [];
+  } else  {
+    return num.sort((a, b) => a - b);
+  }
+}
+
+console.log(solution([1, 2, 10, 50, 5, 3]));
+console.log(solution(null))
+console.log(solution([]))
