@@ -988,11 +988,51 @@ function stray(arr) {
 function solution(num) {
   if (num == [] || num === null) {
     return [];
-  } else  {
+  } else {
     return num.sort((a, b) => a - b);
   }
 }
 
-console.log(solution([1, 2, 10, 50, 5, 3]));
-console.log(solution(null))
-console.log(solution([]))
+// console.log(solution([1, 2, 10, 50, 5, 3]));
+// console.log(solution(null))
+// console.log(solution([]))
+
+// 73 Write a function findNeedle() that takes an array full of junk but containing one "needle"
+
+function findNeedle(haystack) {
+  if (haystack.includes("needle")) {
+    const position = haystack.findIndex((element) => element === "needle");
+    console.log(position);
+    return `found the needle at position ${position}`;
+  } else {
+    return "Your function didn't return anything";
+  }
+}
+
+// console.log(
+//   findNeedle([
+//     "3",
+//     "123124234",
+//     undefined,
+//     "needle",
+//     "world",
+//     "hay",
+//     2,
+//     "3",
+//     true,
+//     false,
+//   ])
+// );
+// console.log(
+//   findNeedle([
+//     "283497238987234",
+//     "a dog",
+//     "a cat",
+//     "some random junk",
+//     "a piece of hay",
+//     "needle",
+//     "something somebody lost a while ago",
+//   ])
+// );
+
+
