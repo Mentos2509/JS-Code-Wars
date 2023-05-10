@@ -1035,4 +1035,10 @@ function findNeedle(haystack) {
 //   ])
 // );
 
+// 74 Your task is to split the chocolate bar of given dimension n x m into small squares. Each square is of size 1x1 and unbreakable. Implement a function that will return minimum number of breaks needed.
 
+function breakChocolate(n, m) {
+  return n * m >= 1 ? n * m - 1 : 0;
+}
+
+console.log(breakChocolate(2, 2));
