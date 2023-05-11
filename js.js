@@ -1041,4 +1041,21 @@ function breakChocolate(n, m) {
   return n * m >= 1 ? n * m - 1 : 0;
 }
 
-console.log(breakChocolate(2, 2));
+// console.log(breakChocolate(2, 2));
+
+// 75 r. Scrooge has a sum of money 'P' that he wants to invest. Before he does, he wants to know how many years 'Y' this sum 'P' has to be kept in the bank in order for it to amount to a desired sum of money 'D'.
+
+function calculateYears(principal, interest, tax, desired) {
+  if (desired === principal) {
+    return 0;
+  } else {
+    let years = 0;
+    while (desired >= principal) {
+      principal = principal + principal * interest * (1 - tax);
+      years++;
+    }
+    return years;
+  }
+}
+
+console.log(calculateYears(5336385, 0.01, 0.07, 6452577));
