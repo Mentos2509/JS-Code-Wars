@@ -1058,4 +1058,40 @@ function calculateYears(principal, interest, tax, desired) {
   }
 }
 
-console.log(calculateYears(5336385, 0.01, 0.07, 6452577));
+// console.log(calculateYears(5336385, 0.01, 0.07, 6452577));
+
+// 76 Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).
+
+function countSheeps(arrayOfSheep) {
+  return arrayOfSheep.filter(Boolean).length;
+}
+
+console.log(
+  countSheeps([
+    true,
+    true,
+    true,
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    true,
+    false,
+    true,
+    false,
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+    true,
+    true,
+  ])
+);
+console.log(countSheeps([]));
